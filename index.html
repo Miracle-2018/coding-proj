@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+      <form>
+    <div class="together">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <input
+              type="text"
+              placeholder="Enter city..."
+              class="form-control"
+              autofocus
+              id="Enter-city"
+            />
+          </div>
+          <div class="col-3">
+            <input type="submit" value="Search" class="form-control" id="searched" />
+          </div>
+          <div class="col-3">
+            <input type="submit" value="Current" class="form-control" id="current"/>
+          </div>
+        </form>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/64/rain_s_cloudy.png"
+            alt="cloudy"
+          />
+          <span id="letters"> </span>
+          <span id="numb">
+          <span class="degrees"><a href="#" id="cels">°C</a> |</span>
+          <a href="#"id="faren">°F</a></span>
+          <div class="col 6">
+            <div class="in">
+              <div id="humidify"> </div>
+              <div id="windy">   </div> 
+            </div>
+          </div>
+          <div class="col 6">
+            <div class="out" id="country"></div>
+            <div class="btw" id="inFull"></div>
+            <div class="btw" id="describe"></div>
+          </div>
+        </div>
+        <p>Temperature | Precipitation | Wind</p>
+        <div class="row">
+          <div class="col 4">Mon</div>
+          <div class="col 4">Tue</div>
+          <div class="col 4">Wed</div>
+          <div class="col 4">Thur</div>
+          <div class="col 4">Fri</div>
+        </div>
+        <div class="row">
+          <div class="col">🌧️</div>
+          <div class="col">☁️</div>
+          <div class="col">☁️</div>
+          <div class="col">☁️</div>
+          <div class="col">🌨️</div>
+        </div>
+        <div class="row star">
+          <div class="col">12°3°</div>
+          <div class="col">15°2°</div>
+          <div class="col">13°4°</div>
+          <div class="col">12°6°</div>
+          <div class="col">11°4°</div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js">
+      Weather
+    </script>
+  </body>
+</html>
