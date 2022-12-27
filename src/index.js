@@ -44,9 +44,8 @@ function tellWeather(response) {
   console.log(response.data);
   console.log(response.data.name);
   document.querySelector("#country").innerHTML = response.data.name;
-  document.querySelector("#letters").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemp = response.data.main.temp;
+  document.querySelector("#letters").innerHTML = Math.round(celsiusTemp);
   document.querySelector(
     "#windy"
   ).innerHTML = `Wind: ${response.data.wind.speed}km/h`;
@@ -65,7 +64,6 @@ function tellWeather(response) {
   );
   descriptionElement.setAttribute("alt", response.data.weather[0].description);
 }
-find("Amsterdam");
 ///Challenge 4(then this 2)
 function myLocation(position) {
   let latitude = position.coords.latitude;
@@ -82,3 +80,28 @@ function getLoc(event) {
 //this first
 let currentLoc = document.querySelector("#current");
 currentLoc.addEventListener("click", getLoc);
+
+function getFarenheittemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  farenheitLink.classList.add("active");
+  let letter = document.querySelector("#letters");
+  let Farenheittemp = (celsiusTemp * 9) / 5 + 32;
+  letter.innerHTML = Math.round(Farenheittemp);
+}
+function getCelsiustemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  farenheitLink.classList.remove("active");
+  let letter = document.querySelector("#letters");
+  letter.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+
+let farenheitLink = document.querySelector("#faren");
+farenheitLink.addEventListener("click", getFarenheittemp);
+
+let celsiusLink = document.querySelector("#cels");
+celsiusLink.addEventListener("click", getCelsiustemp);
+find("Amsterdam");
