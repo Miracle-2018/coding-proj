@@ -56,6 +56,14 @@ function tellWeather(response) {
   document.querySelector(
     "#describe"
   ).innerHTML = ` ${response.data.weather[0].description}`;
+  let iconElement = document.querySelector("#icon");
+  let descriptionElement = document.querySelector("#describe");
+
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  descriptionElement.setAttribute("alt", response.data.weather[0].description);
 }
 find("Amsterdam");
 ///Challenge 4(then this 2)
