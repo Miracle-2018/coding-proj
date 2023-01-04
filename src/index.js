@@ -23,6 +23,28 @@ let now = new Date();
 let total = document.querySelector("#inFull");
 total.innerHTML = fullestTime(now);
 
+//Challenge last
+function weatherForecastdisplay() {
+  let forecastDisplay = document.querySelector("#weather-forecast");
+  let days = ["Fri", "Sat", "Sun", "Mon"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2"> 
+            <div id="weather-forecast-day">${day}</div>
+            <img id= "weather-forecast-image" src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png" alt="" >
+             <div id="weather-forecast-temp">
+             <span id="weather-forecast-max">12°</span>
+             <span id="weather-forecast-min">3°</span>
+            </div>
+            </div>
+            `;
+  });
+  forecastHTML = `</div>`;
+  forecastDisplay.innerHTML = forecastHTML;
+}
 //Challenge3(then this)
 function find(city) {
   let apiKey = "50fa4024e3b1d5eac2f51ab18a47e997";
@@ -105,3 +127,4 @@ farenheitLink.addEventListener("click", getFarenheittemp);
 let celsiusLink = document.querySelector("#cels");
 celsiusLink.addEventListener("click", getCelsiustemp);
 find("Amsterdam");
+weatherForecastdisplay();
