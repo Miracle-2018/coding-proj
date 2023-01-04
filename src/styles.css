@@ -120,3 +120,28 @@ p {
 .active:hover {
   text-decoration: none;
 }
+#weather-forecast {
+  text-align: center;
+  margin-top: 20px;
+}
+#weather-forecast-day {
+  color: #202124;
+  line-height: 15px;
+  padding-top: 7px;
+  font-size: 15px;
+}
+#weather-forecast-image {
+  height: 48px;
+  width: 48px;
+  display: block;
+}
+#weather-forecast-max {
+  font-size: 13px;
+  line-height: 15px;
+}
+
+#weather-forecast-min {
+  color: #70757a;
+  font-size: 13px;
+  line-height: 15px;
+}
