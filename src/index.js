@@ -26,12 +26,13 @@ total.innerHTML = fullestTime(now);
 //Challenge last
 function weatherForecastdisplay() {
   let forecastDisplay = document.querySelector("#weather-forecast");
-  let days = ["Fri", "Sat", "Sun", "Mon"];
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  if (forecastDisplay) {
+    let days = ["Fri", "Sat", "Sun", "Mon"];
+    let forecastHTML = `<div class="row">`;
+    days.forEach(function (day) {
+      forecastHTML =
+        forecastHTML +
+        `
           <div class="col-2"> 
             <div id="weather-forecast-day">${day}</div>
             <img id= "weather-forecast-image" src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png" alt="" >
@@ -41,10 +42,14 @@ function weatherForecastdisplay() {
             </div>
             </div>
             `;
-  });
-  forecastHTML = `</div>`;
-  forecastDisplay.innerHTML = forecastHTML;
+    });
+    forecastHTML = forecastHTML + `</div>`;
+    forecastDisplay.innerHTML = forecastHTML;
+  }
 }
+
+weatherForecastdisplay();
+
 //Challenge3(then this)
 function find(city) {
   let apiKey = "50fa4024e3b1d5eac2f51ab18a47e997";
@@ -127,4 +132,3 @@ farenheitLink.addEventListener("click", getFarenheittemp);
 let celsiusLink = document.querySelector("#cels");
 celsiusLink.addEventListener("click", getCelsiustemp);
 find("Amsterdam");
-weatherForecastdisplay();
